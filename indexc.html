@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Sign Up</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  
+  <body onload="loadmsgs();">
+  <p>Please Wait...</p>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/jquery.js"></script>
+  <script>
+
+var socket = io();
+function loadmsgs()
+{
+
+ var query = window.location.search.substring(1);
+    
+      socket.emit('signup', query);
+
+ }
+ socket.on("reload", function(){
+  top.postMessage('hello', 'http://localhost/pairup/login/wait.php');//when the db insert is done, send the parent window a msg
+ })
+  
+</script>  
+  </body>
+</html>
