@@ -9,7 +9,6 @@
   
   <body onload="loadmsgs();">
   <script src="/socket.io/socket.io.js"></script>
-  <script src="/js/jquery.min.js"></script>
   <script>
 
 var socket = io();
@@ -22,7 +21,6 @@ function loadmsgs()
 
  }
  socket.on("reload", function(){
-  alert('reload works');
   top.postMessage('hello', 'http://lodgefriend.com/login/wait.php');
  })
   
