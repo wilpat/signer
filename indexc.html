@@ -22,6 +22,7 @@ function loadmsgs()
 
  }
  socket.on("reload", function(){
+  alert('reload works');
   top.postMessage('hello', 'http://www.lodgefriend.com/login/wait.php');
  })
   
